@@ -8,7 +8,7 @@ app = FastAPI()
 
 class GetTranscriptBody(BaseModel):
     video_id: str
-    languages: list[str] = ['ru']
+    languages: list[str] = ['en']
 
 
 @app.post("/api/v1/get_transcript")
