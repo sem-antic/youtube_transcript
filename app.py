@@ -12,8 +12,8 @@ class GetTranscriptBody(BaseModel):
 
 
 @app.post("/api/v1/get_transcript")
-def predict_customer_intents(body: GetTranscriptBody):
-    result = YouTubeTranscriptApi.get_transcript(body.video_id, languages=['ru'])
+async def predict_customer_intents(body: GetTranscriptBody):
+    result = YouTubeTranscriptApi.get_transcript(body.video_id, languages=body.languages)
     return result
 
 
